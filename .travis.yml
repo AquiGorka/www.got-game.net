@@ -1,0 +1,8 @@
+git:
+  depth: 10
+branches:
+  only:
+    - master
+script:
+  - gem install dpl
+  - dpl --provider=gcs --access-key-id=$GCS_ACCESS_KEY_ID --secret-access-key=$GCS_SECRET_ACCESS_KEY --bucket=www.got-game.net --local-dir=public --acl=public-read --skip-cleanup
